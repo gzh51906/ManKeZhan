@@ -1,7 +1,7 @@
 const express = require('express');
 const Router = express.Router();
 const mysql = require('../db/mysql');
-const { formatData } = require('../utils/index');
+const { formatData, token } = require('../utils/index');
 //增
 Router.post('/', async (req, res) => {
     let { username, password, phone } = req.body;

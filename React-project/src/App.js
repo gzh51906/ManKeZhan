@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom'
-
 import { Icon } from 'antd';
 import { TabBar } from 'antd-mobile';
-
 import Home from './pages/Home/index.jsx'
 import Classification from './pages/Classification/index.jsx'
 import Bookshelf from './pages/Bookshelf/index.jsx'
@@ -36,11 +34,6 @@ class App extends Component {
             key: 'mine'
         }]
     };
-
-    goto = (path) => {
-        console.log(555);
-
-    }
 
     render() {
         return <div>
