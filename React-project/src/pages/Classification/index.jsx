@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
+import './index.scss'
+
 class Classification extends Component {
     render() {
         return (
-            <div>分类Classification</div>
+            <div id="classification">
+                <h3>nihao</h3>
+            </div>
         )
     }
 }
