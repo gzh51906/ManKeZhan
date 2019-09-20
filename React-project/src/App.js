@@ -55,9 +55,9 @@ class App extends Component {
                             return <TabBar.Item
                                 title={item.title}
                                 key={item.key}
-                                icon={<Icon type={item.icon} spin style={{ "fontSize": "19px", "color": "#aaa" }} theme="filled" />
+                                icon={<Icon type={item.icon} style={{ "fontSize": "19px", "color": "#aaa" }} theme="filled" />
                                 }
-                                selectedIcon={<Icon type={item.icon} spin style={{ "fontSize": "19px", "color": "orange" }} theme="filled" />
+                                selectedIcon={<Icon type={item.icon} style={{ "fontSize": "19px", "color": "orange" }} theme="filled" />
                                 }
                                 selected={this.state.selectedTab === item.key}
                                 onPress={() => {
