@@ -6,7 +6,7 @@ import Home from './pages/Home/index.jsx'
 import Classification from './pages/Classification/index.jsx'
 import Bookshelf from './pages/Bookshelf/index.jsx'
 import Mine from './pages/Mine/index.jsx'
-
+import "./static/rem.js"
 class App extends Component {
 
     state = {
