@@ -1,6 +1,56 @@
-#classification{
-    border: 1px solid red;
-    h3{
-        color: red;
+#classification {
+    border: .001333rem solid #fff;
+    background-color: #fff;
+    .header {
+        height: 1.173333rem;
+        border-bottom: .013333rem solid #ebebeb;
+        padding: 0px .32rem 0px .32rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        z-index: 99;
+        .left {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 1rem;
+
+            p {
+                color: #ff7830;
+                font-size: .4rem;
+                cursor:pointer;
+            }
+
+            span {
+                display: block;
+                background-color: #ff7830;
+                height: .096667rem;
+                width: .366667rem;
+                border-radius: .133333rem;
+                margin-left: .19267rem;
+            }
+        }
+
+        .right {
+            img{
+                width: .586667rem;
+                height: .64rem;
+            }
+        }
+    }
+    .main{
+        margin-top: 1.473333rem;
+        padding: 0px .32rem 0px .32rem;
+        margin-bottom: 1.43333rem;
+        img{
+            width: 4.52rem;
+            height: 2.4rem;
+            margin-bottom: .366667rem;
+        }
+        
     }
 }

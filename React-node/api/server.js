@@ -22,6 +22,6 @@ app.use(express.static('./'));
 //路由
 app.use(router);
 app.listen(PORT, () => {
-    console.log('5786服务器打开了', PORT);
+    console.log('9876服务器打开了', PORT);
 })
 
