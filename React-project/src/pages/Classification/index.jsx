@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import './index.scss'
 
 class Classification extends Component {
     render() {

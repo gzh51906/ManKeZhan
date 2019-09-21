@@ -6,6 +6,8 @@ import Home from './pages/Home/index.jsx'
 import Classification from './pages/Classification/index.jsx'
 import Bookshelf from './pages/Bookshelf/index.jsx'
 import Mine from './pages/Mine/index.jsx'
+import Login from './pages/Login/index.jsx'
+import Reg from './pages/Reg/index.jsx'
 import "./static/rem.js"
 class App extends Component {
 
@@ -34,6 +36,15 @@ class App extends Component {
             key: 'mine'
         }]
     };
+    componentDidMount() {
+        let select = this.props.location.pathname.slice(1)
+        if (select == "classify") {
+            select = "classification";
+        }
+        this.setState({
+            selectedTab: select
+        })
+    }
 
     render() {
         return <div>
@@ -71,6 +82,8 @@ class App extends Component {
                     <Route path="/classification" component={Classification}></Route>
                     <Route path="/bookshelf" component={Bookshelf}></Route>
                     <Route path="/mine" component={Mine}></Route>
+                    <Route path="/login" component={Login}></Route>
+                    <Route path="/reg" component={Reg}></Route>
                     <Redirect from="/" to="/home" exact></Redirect>
                 </Switch>
             </div>
