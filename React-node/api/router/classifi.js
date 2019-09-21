@@ -15,7 +15,7 @@ Router.get('/', async (req, res) => {
 });
 
 Router.get('/classify/:id', async (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     // let result;
     // try {
     //     let data = await mysql(`SELECT * FROM  classification WHERE 1`)
