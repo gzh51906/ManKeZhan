@@ -5,6 +5,7 @@ import { Col, Row } from "antd";
 
 import "./index.scss";
 
+
 class Classification extends Component {
   state = {
     data: []
@@ -19,8 +20,8 @@ class Classification extends Component {
   }
   goto = id => {
     this.props.history.push({
-      pathname:'/classify',
-      id:id
+      pathname: '/classify',
+      id: id
     });
   };
   render() {

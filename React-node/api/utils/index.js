@@ -12,3 +12,8 @@ exports.formatData = function formData({
         msg
     }
 }
+const { create, verify } = require('./token');
+exports.token = {
+    create,
+    verify
+}
