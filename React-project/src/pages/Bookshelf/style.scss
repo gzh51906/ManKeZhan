@@ -1,13 +1,210 @@
 #bookshelf_box {
-    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 1.333333rem;
+
 
     header {
+        border-bottom: .013333rem solid #ebebeb;
+        padding: 0px .32rem 0px .32rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
         width: 100%;
+        background-color: #fff;
+        z-index: 99;
         height: 1.186667rem;
+
+        .left {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 1rem;
+
+            p {
+                color: #ff7830;
+                font-size: .4rem;
+                cursor: pointer;
+            }
+
+            span {
+                display: block;
+                background-color: #ff7830;
+                height: .096667rem;
+                width: .366667rem;
+                border-radius: .133333rem;
+                margin-left: .19267rem;
+            }
+        }
+
+        .right {
+            svg {
+                width: .586667rem;
+                height: .64rem;
+                color: #ff7830;
+                font-size: .4rem;
+                vertical-align: middle;
+            }
+
+            span {
+                font-size: .4rem;
+                cursor: pointer;
+                vertical-align: middle;
+
+            }
+
+
+        }
     }
 
     main {
-        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 1.186667rem;
+        bottom: 0;
         overflow: auto;
+        box-sizing: border-box;
+        padding-left: .32rem;
+        padding-top: .32rem;
+
+
+        .mainbox {
+            div {
+                width: 4.32rem;
+                height: 2.8rem;
+                margin: .8rem auto 0;
+            }
+
+            p {
+                margin-top: .18667rem;
+                font-size: .4rem;
+                line-height: .58667rem;
+                color: #b4b4b4;
+                text-align: center;
+            }
+
+            button {
+                display: block;
+                box-sizing: border-box;
+                width: 2.66667rem;
+                height: .85333rem;
+                margin: .42667rem auto 0;
+                color: #666;
+                line-height: .85333rem;
+                border-radius: .42667rem;
+                border: 1px solid #ccc;
+                background: transparent;
+
+            }
+        }
+
+        .maintop {
+            list-style: none;
+            font-size: .32rem;
+            padding-bottom: 1.386667rem;
+            overflow: auto;
+
+            li {
+                float: left;
+                width: 3.01333rem;
+                margin-right: .16rem;
+                margin-bottom: .26667rem;
+                padding-bottom: .16rem;
+                position: relative;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 4rem;
+                    background: #ccc;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                div {
+                    width: 100%;
+                    text-align: center;
+                    color: #28292d;
+
+                    .liname {
+                        height: .53333rem;
+                        margin-top: .13333rem;
+                        line-height: .53333rem;
+                        font-size: .346667rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .litext {
+                        height: .4rem;
+                        line-height: .4rem;
+                        font-size: .266667rem;
+                        color: #999;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+
+                .hidebtn {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 4rem;
+                    background: rgba(0, 0, 0, 0.4);
+
+                    .hhidebutton {
+                        float: right;
+                        margin: .133333rem .133333rem;
+                    }
+                }
+            }
+        }
+
+        .mainbot {
+            position: absolute;
+            height: 1.386667rem;
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9;
+
+            .botspan1 {
+                border-right: 1px solid #ccc;
+            }
+
+            .botspan {
+                border-top: 1px solid #ccc;
+                display: inline-block;
+                width: 50%;
+                height: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                line-height: 1.33333rem;
+                color: #666;
+                font-size: .426667rem;
+
+                span {
+                    font-size: .426667rem;
+
+                }
+
+                svg {
+                    color: #ff7830;
+                }
+
+            }
+        }
     }
 }

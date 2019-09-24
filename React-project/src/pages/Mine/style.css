@@ -224,3 +224,16 @@
   color: #cf9d83;
   line-height: .48rem;
 }
+
+#mine_box .bottom_box .loginout {
+  display: block;
+  width: 100%;
+  height: 1.33333rem;
+  margin-top: .32rem;
+  font-size: .426667rem;
+  line-height: 1.33333rem;
+  text-align: center;
+  border: 0;
+  color: #999;
+  background: #fff;
+}

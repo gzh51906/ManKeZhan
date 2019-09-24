@@ -1,14 +1,58 @@
 import React, { Component } from 'react';
 import "./style.scss";
-import { Input, Tooltip, Icon, Button } from 'antd';
+import axios from 'axios';
+import { Input, Icon, Button } from 'antd';
+import { Toast } from 'antd-mobile';
+
 class Login extends Component {
+    state = {
+        phone: false,
+        password: false
+    }
     onchangeuse = (e) => {
-        console.log(e.target.value);
+        let phone = e.target.value;
+        if (!(/^1[3456789]\d{9}$/.test(phone))) {
+            Toast.info('手机号码格式不正确！');
+            return false;
+        } else {
+            this.setState({
+                phone: phone
+            })
+        }
     }
     onchangepsw = (e) => {
-        console.log(e.target.value);
+        let password = e.target.value;
+        if (!(/^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z\d]{6,16}$/.test(password))) {
+            Toast.info('请您输入6~16位密码，必须包含字母及数字。');
+            return false;
+        } else {
+            this.setState({
+                password: password
+            })
+        }
 
     }
+    loginbtn = (event) => {
+        let { phone, password } = this.state;
+        if (phone && password) {
+            axios.post("http://localhost:9876/user/login", {
+                phone: phone,
+                password: password
+            }).then(res => {
+                let { data: { code, data } } = res;
+                if (code == 1) {
+                    let authorization = data.authorization;
+                    localStorage.setItem("authorization", authorization)
+                    this.props.history.go(-1);
+                } else {
+                    Toast.info('用户名或密码错误！');
+                }
+            })
+        } else {
+            Toast.info('请完善登录信息。');
+        }
+    }
+
     render() {
         return (
             <div id="login_box">
@@ -24,18 +68,16 @@ class Login extends Component {
                 </header>
                 <main>
                     <Input
-                        onPressEnter={this.onchangeuse}
+                        onBlur={this.onchangeuse}
                         placeholder="用户名/手机号"
                         type="search"
                         prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                     />
                     <Input
-                        onPressEnter={this.onchangepsw}
+                        onBlur={this.onchangepsw}
                         placeholder="登录密码"
                         prefix={<Icon type="key" style={{ color: 'rgba(0,0,0,.25)' }} />} />
-                    <Button type="danger" onClick={(event) => {
-                        console.log("点击了登录按钮")
-                    }}>
+                    <Button type="danger" onClick={this.loginbtn}>
                         登录
                     </Button>
                 </main>

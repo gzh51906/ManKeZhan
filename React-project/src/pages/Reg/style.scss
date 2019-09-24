@@ -1,6 +1,6 @@
 #reg_box {
     position: fixed;
-    z-index: 2;
+    z-index: 999;
     left: 0;
     right: 0;
     top: 0;
@@ -37,20 +37,27 @@
         .ant-input-affix-wrapper {
             box-sizing: border-box;
             margin: .32rem 1.066667rem;
-            // border: 1px solid #ddd;
             border-radius: .10667rem;
             overflow: hidden;
             width: 7.866667rem;
             height: 1.066667rem;
             display: block;
+            padding: 0;
+
+            .ant-input-prefix {
+                left: 0;
+            }
 
             .minput1 {
                 height: .586667rem;
-                width: 1rem;
-                text-align: left;
+                width: .8rem;
+                text-align: center;
+                font-size: .32rem;
                 border-right: 1px solid #ccc;
+                left: 0;
 
             }
+
 
             .ant-input-prefix {
                 height: 1.066667rem;
@@ -69,6 +76,17 @@
             background: #ffaf84;
             border: 0;
             border-radius: .58667rem;
+        }
+
+        p {
+            font-size: .32rem;
+            text-align: center;
+            margin-top: .46667rem;
+            color: #b4b4b4;
+
+            a {
+                font-size: .32rem;
+            }
         }
     }
 }
