@@ -1,0 +1,50 @@
+#classify {
+    .img{
+        width: .586667rem;
+        height: .64rem;
+    }
+    .list {
+        padding: 1.4rem .32rem 0rem .32rem;
+        padding-bottom: 1.166667rem;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            li {
+                margin-bottom: .333333rem;
+
+                img {
+                    height: 4rem;
+                    width: 3.013333rem;
+                }
+
+                div {
+                    .comic-name {
+                        font-size: 13px;
+                        text-align: center;
+                        margin-top: .13333rem;
+                        color: black;
+                        width: 3.013333rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .comic-tip {
+                        font-size: 12px;
+                        text-align: center;
+                        color: #aaa;
+                        line-height: .26rem;
+                        width: 3.013333rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        height: .36rem;
+                    }
+                }
+            }
+        }
+    }
+}
