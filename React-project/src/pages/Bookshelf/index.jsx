@@ -6,18 +6,58 @@ import axios from 'axios';
 class Bookshelf extends Component {
     state = {
         islogin: false,
-        isarrange: true
+        isarrange: true,
+        bookshelflist: [],
+        checkAll: false
     }
     changearrange = () => {
         this.setState({
             isarrange: !this.state.isarrange
         })
     }
-    check = (e) => {
-        console.log(`checked = ${e.target.checked}`);
+    check = (id, e) => {
+        let arrt = this.state.bookshelflist.map(item => {
+            if (item.comic_id == id) {
+                item.ischeck = e.target.checked
+            }
+            return item
+        })
+        this.setState({
+            bookshelflist: arrt
+        })
+        let aaa = this.state.bookshelflist.every(item => {
+            return item.ischeck
+        })
+        this.setState({
+            checkAll: aaa
+        })
     }
     allcheck = (e) => {
-        console.log(`allchecked = ${e.target.checked}`);
+        this.setState({
+            checkAll: e.target.checked,
+        })
+        this.state.bookshelflist.map(item => {
+            item.ischeck = e.target.checked
+        })
+
+    }
+    clearlistitem = () => {
+        this.state.bookshelflist.forEach(item => {
+            if (item.ischeck == true) {
+                axios.delete("http://localhost:9876/bookshelf", {
+                    data: {
+                        phone: localStorage.getItem("phone"),
+                        comic_id: item.comic_id
+                    }
+                })
+            }
+        })
+        let delarrt = this.state.bookshelflist.filter(item => {
+            return item.ischeck == false
+        })
+        this.setState({
+            bookshelflist:delarrt
+        })
     }
     componentDidMount() {
         let authorization = localStorage.getItem("authorization");
@@ -27,13 +67,27 @@ class Bookshelf extends Component {
                     Authorization: authorization
                 }
             }).then((res) => {
+                console.log(res);
                 if (res.data.code == 1) {
                     this.setState({
                         islogin: true,
                         usern: `user_${authorization.slice(0, 5)}`
-                    })
+                    });
+                    axios.get(`http://localhost:9876/bookshelf/${localStorage.getItem("phone")}`).then(data => {
+                        let suju = data.data.data.map(item => {
+                            item.ischeck = false
+                            return item
+                        })
+                        this.setState({
+                            bookshelflist: suju
+                        })
+                    });
+                } else {
+                    localStorage.removeItem("phone")
                 }
             })
+        } else {
+            localStorage.removeItem("phone")
         }
     }
     render() {
@@ -68,26 +122,29 @@ class Bookshelf extends Component {
                     {
                         this.state.islogin ? <>
                             <ul className="maintop">
-                                <li>
-                                    <a href="">
-                                        <img src="" alt="" />
-                                    </a>
-                                    <div><p className="liname">九阳神王</p>
-                                        <p className="litext">1/136</p></div>
-                                    {
-                                        this.state.isarrange ? null : <div className="hidebtn">
-                                            <Checkbox className="hhidebutton" onChange={this.check}></Checkbox>
-                                        </div>
-                                    }
-
-                                </li>
+                                {
+                                    this.state.bookshelflist.map(item => {
+                                        return <li key={item.comic_id}>
+                                            <a href="">
+                                                <img src={item.cover} alt="" />
+                                            </a>
+                                            <div><p className="liname">{item.title}</p>
+                                                <p className="litext">1/{item.chapter_num}</p></div>
+                                            {
+                                                this.state.isarrange ? null : <div className="hidebtn">
+                                                    <Checkbox className="hhidebutton" checked={item.ischeck} onChange={this.check.bind(this, item.comic_id)}></Checkbox>
+                                                </div>
+                                            }
+                                        </li>
+                                    })
+                                }
                             </ul>
                             {
                                 this.state.isarrange ? null : <div className="mainbot">
                                     <span className="botspan botspan1">
-                                        <Checkbox onChange={this.allcheck}>全选</Checkbox>
+                                        <Checkbox onChange={this.allcheck} checked={this.state.checkAll} >全选</Checkbox>
                                     </span>
-                                    <span className="botspan"><Icon type="delete" />删除</span>
+                                    <span onClick={this.clearlistitem} className="botspan"><Icon type="delete" />删除</span>
                                 </div>
                             }
                         </> : null}

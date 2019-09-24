@@ -42,7 +42,7 @@ class Mine extends Component {
                     {
                         this.state.islogin
                             ? <>
-                                <p className="headpng" style={{ zIndex: "9", background: "url(../../assets/mine/4.jpg!width-100) no-repeat", backgroundSize: "cover" }} onClick={this.gotologin}>
+                                <p className="headpng" style={{ zIndex: "9", background: "url(../../assets/mine/4.jpg!width-100) no-repeat", backgroundSize: "cover" }}>
                                     <img src="" alt="" />
                                 </p>
                                 <p className="tip1">{this.state.usern}</p>
