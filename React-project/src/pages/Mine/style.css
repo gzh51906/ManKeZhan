@@ -1,0 +1,239 @@
+#mine_box {
+  width: 100%;
+}
+
+#mine_box .head_portrait {
+  position: relative;
+  height: 2.826667rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+#mine_box .head_portrait .headpng {
+  float: left;
+  margin: .66667rem .32rem 0 .42667rem;
+  width: 1.33333rem;
+  height: 1.33333rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#mine_box .head_portrait .tip1 {
+  color: #fff;
+  line-height: .64rem;
+  margin-top: .78667rem;
+  font-size: .426667rem;
+}
+
+#mine_box .head_portrait .tip2 {
+  color: #fff;
+  line-height: .42667rem;
+  font-size: .293333rem;
+}
+
+#mine_box .account_bar {
+  height: 1.333333rem;
+  width: 100%;
+  background: #ffffff;
+  padding: 0 .32rem;
+  box-sizing: border-box;
+}
+
+#mine_box .account_bar p {
+  position: relative;
+  height: 100%;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+#mine_box .account_bar p img {
+  display: inline-block;
+  margin-top: -0.2rem;
+  margin-right: .32rem;
+  width: .53333rem;
+  height: .50667rem;
+}
+
+#mine_box .account_bar p span {
+  display: inline-block;
+  height: 100%;
+  line-height: 1.333333rem;
+  font-size: .4rem;
+}
+
+#mine_box .account_bar p .tip {
+  font-size: .16rem;
+  position: absolute;
+  right: 0;
+  top: .42667rem;
+  color: #cf9d83;
+  line-height: .48rem;
+}
+
+#mine_box .bottom_box {
+  width: 100%;
+  height: 11.453333rem;
+  background: #f6f6f6;
+}
+
+#mine_box .bottom_box .money_ticket {
+  color: #28292d;
+  height: 1.333333rem;
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+}
+
+#mine_box .bottom_box .money_ticket .money {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 4.68rem;
+  height: 1.33333rem;
+  border-top: 1px solid #ebebeb;
+  margin-left: .32rem;
+  text-align: right;
+  padding-right: .8rem;
+}
+
+#mine_box .bottom_box .money_ticket .money img {
+  display: inline-block;
+  width: .48rem;
+  height: .44rem;
+  margin-right: .32rem;
+  vertical-align: middle;
+}
+
+#mine_box .bottom_box .money_ticket .money span {
+  line-height: 1.33333rem;
+  vertical-align: middle;
+  font-size: .426667rem;
+  text-align: right;
+}
+
+#mine_box .bottom_box .money_ticket i {
+  position: absolute;
+  width: 2px;
+  top: 50%;
+  left: 50%;
+  height: .58rem;
+  border-right: 1px solid #f6ccf6;
+  transform: translate(-50%, -50%);
+}
+
+#mine_box .bottom_box .money_ticket .ticket {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 4.68rem;
+  height: 1.33333rem;
+  border-top: 1px solid #ebebeb;
+  margin-right: .32rem;
+  padding-left: .8rem;
+}
+
+#mine_box .bottom_box .money_ticket .ticket img {
+  display: inline-block;
+  width: .34667rem;
+  height: .48rem;
+  margin-right: .32rem;
+  vertical-align: middle;
+  line-height: 1.33333rem;
+}
+
+#mine_box .bottom_box .money_ticket .ticket span {
+  line-height: 1.33333rem;
+  vertical-align: middle;
+  font-size: .426667rem;
+  text-align: right;
+}
+
+#mine_box .bottom_box .purchase {
+  height: 1.333333rem;
+  width: 100%;
+  background: #ffffff;
+  margin: .16rem 0;
+  padding: 0 .32rem;
+  box-sizing: border-box;
+}
+
+#mine_box .bottom_box .purchase p {
+  position: relative;
+  height: 100%;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+#mine_box .bottom_box .purchase p img {
+  display: inline-block;
+  margin-top: -0.2rem;
+  margin-right: .32rem;
+  width: .53333rem;
+  height: .50667rem;
+}
+
+#mine_box .bottom_box .purchase p span {
+  display: inline-block;
+  height: 100%;
+  line-height: 1.333333rem;
+  font-size: .4rem;
+}
+
+#mine_box .bottom_box .purchase p .tip {
+  font-size: .16rem;
+  position: absolute;
+  right: 0;
+  top: .42667rem;
+  color: #cf9d83;
+  line-height: .48rem;
+}
+
+#mine_box .bottom_box .feedback {
+  height: 1.333333rem;
+  width: 100%;
+  background: #ffffff;
+  margin: .16rem 0;
+  padding: 0 .32rem;
+  box-sizing: border-box;
+}
+
+#mine_box .bottom_box .feedback p {
+  position: relative;
+  height: 100%;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+#mine_box .bottom_box .feedback p img {
+  display: inline-block;
+  margin-top: -0.2rem;
+  margin-right: .32rem;
+  width: .53333rem;
+  height: .50667rem;
+}
+
+#mine_box .bottom_box .feedback p span {
+  display: inline-block;
+  height: 100%;
+  line-height: 1.333333rem;
+  font-size: .4rem;
+}
+
+#mine_box .bottom_box .feedback p .tip {
+  font-size: .16rem;
+  position: absolute;
+  right: 0;
+  top: .42667rem;
+  color: #cf9d83;
+  line-height: .48rem;
+}
+
+#mine_box .bottom_box .loginout {
+  display: block;
+  width: 100%;
+  height: 1.33333rem;
+  margin-top: .32rem;
+  font-size: .426667rem;
+  line-height: 1.33333rem;
+  text-align: center;
+  border: 0;
+  color: #999;
+  background: #fff;
+}

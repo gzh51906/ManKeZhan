@@ -23,7 +23,7 @@ module.exports = {
                                 "libraryName": "antd",
                                 "libraryDirectory": "es",
                                 "style": "css" // `style: true` 会加载 less 文件
-                              },'pc'], // `style: true` 会加载 less 文件
+                            }, 'pc'], // `style: true` 会加载 less 文件
                             ['@babel/plugin-proposal-decorators', { legacy: true }],
                             '@babel/plugin-proposal-class-properties'
                         ]
@@ -37,7 +37,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader','sass-loader']
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
@@ -45,6 +45,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/template.html',
+            favicon: "./src/assets/favicon.x_icon"
         })
     ]
 }

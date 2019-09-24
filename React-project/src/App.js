@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import { Route, Redirect, Switch, withRouter } from "react-router-dom";
 
-import { Icon } from "antd";
-import { TabBar } from "antd-mobile";
-
-import Home from "./pages/Home/index.jsx";
-import Classification from "./pages/Classification/index.jsx";
+import React, { Component } from 'react';
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom'
+import { Icon } from 'antd';
+import { TabBar } from 'antd-mobile';
+import Home from './pages/Home/index.jsx'
+import Classification from './pages/Classification/index.jsx'
 import Classify from "./pages/Classification/classify.jsx";
 import Detail from "./pages/Classification/detail.jsx";
-import Bookshelf from "./pages/Bookshelf/index.jsx";
-import Mine from "./pages/Mine/index.jsx";
-
+import Bookshelf from './pages/Bookshelf/index.jsx'
+import Mine from './pages/Mine/index.jsx'
+import Login from './pages/Login/index.jsx'
+import Reg from './pages/Reg/index.jsx'
+import "./static/rem.js"
 class App extends Component {
   state = {
     selectedTab: "home",
@@ -43,10 +44,15 @@ class App extends Component {
     ]
   };
 
-  goto = path => {
-    console.log(555);
-  };
-
+  componentDidMount() {
+    let select = this.props.location.pathname.slice(1)
+    if (select == "classify") {
+      select = "classification";
+    }
+    this.setState({
+      selectedTab: select
+    })
+  }
   render() {
     return (
       <div>
@@ -54,12 +60,12 @@ class App extends Component {
           style={
             this.state.fullScreen
               ? {
-                  position: "fixed",
-                  height:  "1.3rem",
-                  width: "100%",
-                  bottom: 0,
-                  zIndex:99
-                }
+                position: "fixed",
+                height: "1.3rem",
+                width: "100%",
+                bottom: 0,
+                zIndex: 99
+              }
               : { height: 400 }
           }
         >
@@ -106,6 +112,8 @@ class App extends Component {
             <Route path="/classify/:id" component={Classify}></Route>
             <Route path="/detail/:id" component={Detail}></Route>
             <Route path="/bookshelf" component={Bookshelf}></Route>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/reg" component={Reg}></Route>
             <Route path="/mine" component={Mine}></Route>
             <Redirect from="/" to="/home" exact></Redirect>
           </Switch>

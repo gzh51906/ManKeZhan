@@ -5,6 +5,7 @@ import { Col, Row } from "antd";
 
 import "./index.scss";
 
+
 class Classification extends Component {
   state = {
     data: []
