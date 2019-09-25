@@ -38,7 +38,7 @@ class Classification extends Component {
         </div>
         <div className="main" style={{ background: "#fff" }}>
           <Row>
-            {this.state.data.map(item => {
+            { this.state.data.map(item => {
               return (
                 <Col span={12} key={item.id}>
                   <img
