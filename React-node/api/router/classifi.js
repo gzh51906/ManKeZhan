@@ -14,6 +14,17 @@ Router.get('/', async (req, res) => {
     res.send(result)
 });
 
+Router.get('/data', async (req, res) => {
+    let result;
+    try {
+        let data = await mysql(`SELECT * FROM  list ORDER BY RAND() LIMIT 3`)
+        result = formatData({ data });
+    } catch (err) {
+        result = formatData({ code: 0, data: err })
+    }
+    res.send(result)
+});
+
 Router.get('/classify/:id', async (req, res) => {
     let {id} = req.params;
     let result;
