@@ -18,10 +18,11 @@ class Classification extends Component {
       data: data
     });
   }
-  goto = id => {
+  goto = (id,classify) => {
     this.props.history.push({
-      pathname: '/classify',
-      id: id
+      pathname:`/classify/${id}`,
+      id:id,
+      classify:classify
     });
   };
   render() {
@@ -43,7 +44,7 @@ class Classification extends Component {
                 <Col span={12} key={item.id}>
                   <img
                     src={item.imgurl}
-                    onClick={this.goto.bind(this, item.id)}
+                    onClick={this.goto.bind(this, item.id,item.classify)}
                   />
                 </Col>
               );

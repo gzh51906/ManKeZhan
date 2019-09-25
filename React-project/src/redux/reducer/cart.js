@@ -1,6 +1,5 @@
 let defaultState = {
-    goodslist: [],
-    totalprice: 0
+    goodslist: []
 }
 function reducer(state = defaultState, action) {
     switch (action.type) {
@@ -20,16 +19,6 @@ function reducer(state = defaultState, action) {
             return {
                 ...state,
                 goodslist: []
-            };
-        case "changeqty":
-            return {
-                ...state,
-                goodslist: state.goodslist.map(item => {
-                    if (item.goods_id == action.goods_id) {
-                        item.qty = action.qty
-                    }
-                    return item
-                })
             };
         case "changecheck":
             return {

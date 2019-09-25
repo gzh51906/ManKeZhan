@@ -41,8 +41,10 @@ class Login extends Component {
             }).then(res => {
                 let { data: { code, data } } = res;
                 if (code == 1) {
+                    console.log(data);
                     let authorization = data.authorization;
                     localStorage.setItem("authorization", authorization)
+                    localStorage.setItem("phone", phone)
                     this.props.history.go(-1);
                 } else {
                     Toast.info('用户名或密码错误！');

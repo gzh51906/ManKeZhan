@@ -1,7 +1,4 @@
 
-
-
-
 import React, { Component } from 'react';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom'
 import { Icon } from 'antd';
@@ -9,6 +6,7 @@ import { TabBar } from 'antd-mobile';
 import Home from './pages/Home/index.jsx'
 import Classification from './pages/Classification/index.jsx'
 import Classify from "./pages/Classification/classify.jsx";
+import Detail from "./pages/Classification/detail.jsx";
 import Bookshelf from './pages/Bookshelf/index.jsx'
 import Mine from './pages/Mine/index.jsx'
 import Login from './pages/Login/index.jsx'
@@ -111,7 +109,8 @@ class App extends Component {
           <Switch>
             <Route path="/home" component={Home}></Route>
             <Route path="/classification" component={Classification}></Route>
-            <Route path="/classify" component={Classify}></Route>
+            <Route path="/classify/:id" component={Classify}></Route>
+            <Route path="/detail/:id" component={Detail}></Route>
             <Route path="/bookshelf" component={Bookshelf}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/reg" component={Reg}></Route>
