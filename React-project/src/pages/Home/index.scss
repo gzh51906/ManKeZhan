@@ -11,6 +11,7 @@
             font-size: 0.4rem;
        }
     }
+    
     .header{
         height: 1.173333rem;
         padding: 0px .32rem 0px .32rem;
@@ -25,7 +26,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            width: 1rem;
+            
             img{
                 width: 2.00667rem;
                 height: .78667rem;
@@ -124,9 +125,17 @@
         .title{
             color: #000;
             font-size: .35rem;
+            width: 2.9rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
         }
         .pic{
             color: #b4b4b4;
+            width: 2.9rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
         }
         .jp-ul{
             // display: flex;
@@ -151,6 +160,7 @@
     .ss{
         height: 13rem;
         padding: 0.2rem;
+        
         .jp-header{
             line-height: 1rem;
             
@@ -198,9 +208,17 @@
                 .title{
                     color: #000;
                     font-size: .35rem;
+                    width: 2.9rem;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
                 }
                 .pic{
                     color: #b4b4b4;
+                    width: 2.9rem;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
                 }
             }
         }
@@ -277,7 +295,11 @@
                 .title{
                     color: #000;
                     font-size: .35rem;
-                    line-height: .8rem;
+                    width: 4rem;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
+                    line-height: .5rem;
                 }
             }
         }
@@ -287,6 +309,7 @@
         margin-top: 0.5rem;
         ul{
             width: 10rem;
+            position: relative;
             display: flex;
             justify-content: center;
             li{
@@ -298,6 +321,16 @@
                 border-radius:.4rem; 
                 height: 1rem;
                 line-height: .9rem;
+            }
+            
+            .f-b{
+                position: absolute;
+                display: block;
+                width: 1rem;
+                height: 1rem;
+                top: 0.9rem;
+                left: 4.8rem;
+                z-index: -1;
             }
         }
     }
