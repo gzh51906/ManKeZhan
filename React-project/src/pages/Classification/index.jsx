@@ -17,12 +17,14 @@ class Classification extends Component {
     this.setState({
       data: data
     });
+    console.log(this.state.data);
+
   }
-  goto = (id,classify) => {
+  goto = (id, classify) => {
     this.props.history.push({
-      pathname:`/classify/${id}`,
-      id:id,
-      classify:classify
+      pathname: `/classify/${id}`,
+      id: id,
+      classify: classify
     });
   };
   render() {
@@ -34,21 +36,24 @@ class Classification extends Component {
             <span></span>
           </div>
           <div className="right">
-            <img src="../../assets/images/search.png" alt="" />
+            <img onClick={() => {
+              this.props.history.push("/search")
+            }} src="../../assets/images/search.png" alt="" />
           </div>
         </div>
         <div className="main" style={{ background: "#fff" }}>
           <Row>
-            {this.state.data.map(item => {
-              return (
-                <Col span={12} key={item.id}>
-                  <img
-                    src={item.imgurl}
-                    onClick={this.goto.bind(this, item.id,item.classify)}
-                  />
-                </Col>
-              );
-            })}
+            {
+              this.state.data.map(item => {
+                return (
+                  <Col span={12} key={item.id}>
+                    <img
+                      src={item.imgurl}
+                      onClick={this.goto.bind(this, item.id, item.classify)}
+                    />
+                  </Col>
+                );
+              })}
           </Row>
         </div>
       </div>

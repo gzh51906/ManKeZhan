@@ -11,6 +11,7 @@ import Bookshelf from './pages/Bookshelf/index.jsx'
 import Mine from './pages/Mine/index.jsx'
 import Login from './pages/Login/index.jsx'
 import Reg from './pages/Reg/index.jsx'
+import Search from './pages/Search/index.jsx'
 import "./static/rem.js"
 class App extends Component {
   state = {
@@ -46,7 +47,7 @@ class App extends Component {
 
   componentDidMount() {
     let select = this.props.location.pathname.slice(1)
-    if (select.substring(0,select.length-2) == "classify") {
+    if (select.substring(0, select.length - 2) == "classify") {
       select = "classification";
     }
     this.setState({
@@ -114,6 +115,7 @@ class App extends Component {
             <Route path="/bookshelf" component={Bookshelf}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/reg" component={Reg}></Route>
+            <Route path="/search" component={Search}></Route>
             <Route path="/mine" component={Mine}></Route>
             <Redirect from="/" to="/home" exact></Redirect>
           </Switch>

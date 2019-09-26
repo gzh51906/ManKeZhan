@@ -14,6 +14,30 @@ Router.get('/', async (req, res) => {
     res.send(result)
 });
 
+Router.get('/search', async (req, res) => {
+    let { keyword } = req.query;
+    let result;
+    try {
+        // SELECT * FROM list  WHERE title  LIKE '%血族%' LIMIT 0, 30
+        let data = await mysql(`SELECT * FROM list  WHERE title  LIKE '%${keyword}%' LIMIT 0, 30`)
+        result = formatData({ data });
+    } catch (err) {
+        result = formatData({ code: 0, data: [] })
+    }
+    res.send(result)
+});
+
+Router.get('/rand', async (req, res) => {
+    let result;
+    try {
+        // select  *  from  表名 order by rand() limit 20
+        let data = await mysql(`select  *  from  list order by rand() limit 9`)
+        result = formatData({ data });
+    } catch (err) {
+        result = formatData({ code: 0, data: [] })
+    }
+    res.send(result)
+});
 Router.get('/data', async (req, res) => {
     let result;
     try {
@@ -26,7 +50,7 @@ Router.get('/data', async (req, res) => {
 });
 
 Router.get('/classify/:id', async (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     let result;
     try {
         let data = await mysql(`SELECT * FROM  list WHERE theme_id LIKE '%${id}%'`)
@@ -38,7 +62,7 @@ Router.get('/classify/:id', async (req, res) => {
 });
 
 Router.get('/detail/:id', async (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     let result;
     try {
         let data = await mysql(`SELECT * FROM  list WHERE comic_id = '${id}'`)
@@ -50,7 +74,7 @@ Router.get('/detail/:id', async (req, res) => {
 });
 
 Router.get('/:id', async (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
     let result;
     try {
         let data = await mysql(`SELECT * FROM  classification WHERE id = '${id}'`)

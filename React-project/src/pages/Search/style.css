@@ -1,0 +1,151 @@
+#search_box {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+}
+
+#search_box header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 1.17333rem;
+  border-bottom: 1px solid #ebebeb;
+  text-align: center;
+  line-height: 1.17333rem;
+  font-size: .48rem;
+  background: #fff;
+  z-index: 99;
+  box-sizing: border-box;
+  padding: .133333rem;
+}
+
+#search_box header .hbox {
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+
+#search_box header .hbox .anticon-left {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  vertical-align: middle;
+}
+
+#search_box header .hbox .anticon-left svg {
+  width: .48rem;
+  height: .52rem;
+}
+
+#search_box header .hbox button {
+  width: 15%;
+}
+
+#search_box header .hbox .ant-input-affix-wrapper {
+  flex: 1;
+}
+
+#search_box header .hbox .ant-input-affix-wrapper .ant-input-prefix {
+  vertical-align: middle;
+}
+
+#search_box main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-left: .32rem;
+  padding-top: .32rem;
+  top: 1.17333rem;
+}
+
+#search_box main .maintop {
+  list-style: none;
+  font-size: .32rem;
+  padding-bottom: 1.386667rem;
+  overflow: auto;
+}
+
+#search_box main .maintop li {
+  float: left;
+  width: 3.01333rem;
+  margin-right: .16rem;
+  margin-bottom: .26667rem;
+  padding-bottom: .16rem;
+  position: relative;
+}
+
+#search_box main .maintop li .divforimg {
+  display: block;
+  width: 100%;
+  height: 4rem;
+  background: #ccc;
+  overflow: hidden;
+}
+
+#search_box main .maintop li .divforimg img {
+  width: 100%;
+}
+
+#search_box main .maintop li div {
+  width: 100%;
+  text-align: center;
+  color: #28292d;
+}
+
+#search_box main .maintop li div .liname {
+  height: .53333rem;
+  margin-top: .13333rem;
+  line-height: .53333rem;
+  font-size: .346667rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#search_box main .maintop li div .litext {
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .266667rem;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#search_box main .maintop li .hidebtn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#search_box main .maintop li .hidebtn .hhidebutton {
+  float: right;
+  margin: .133333rem .133333rem;
+}
+
+#search_box main .mainbot {
+  width: 100%;
+}
+
+#search_box main .mainbot li {
+  float: left;
+  padding: 0 .21333rem;
+  margin-right: .53333rem;
+  margin-bottom: .32rem;
+  background: #f5f5f5;
+  line-height: .74667rem;
+  text-align: center;
+  border-radius: .02667rem;
+}
