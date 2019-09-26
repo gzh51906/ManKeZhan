@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { NavBar, Icon, Tabs, WhiteSpace, Badge } from "antd-mobile";
-
+import { NavBar, Icon, Tabs, WhiteSpace, Badge, Toast } from "antd-mobile";
 import "./detail.scss";
 
 class Detail extends Component {
@@ -14,7 +13,8 @@ class Detail extends Component {
     page: "",
     boxs: [],
     three: [],
-    sss:'5'
+    sss: "5",
+    iList: []
   };
   async componentDidMount() {
     let id = this.props.match.params.id;
@@ -30,7 +30,9 @@ class Detail extends Component {
       });
     await axios.get(`http://localhost:9876/classifi/detail/${id}`).then(res => {
       let author = res.data.data[0].author_title;
+      let iList = res.data.data;
       this.setState({
+        iList: iList,
         author: author
       });
     });
@@ -65,6 +67,9 @@ class Detail extends Component {
     });
   }
   render() {
+    // console.log('====================================');
+    // console.log(this.state.iList[0].title);
+    // console.log('====================================');
     let { data } = this.state;
     let img = data.cover_lateral + "!banner-600";
     const tabs = [
@@ -217,12 +222,12 @@ class Detail extends Component {
                 return (
                   <li
                     key={item.comic_id}
-                    onClick={()=>{
+                    onClick={() => {
                       this.props.history.push({
-                        pathname:`/detail/${item.comic_id}`,
-                        author:item.author_title
-                      })
-                      location.reload()
+                        pathname: `/detail/${item.comic_id}`,
+                        author: item.author_title
+                      });
+                      location.reload();
                     }}
                   >
                     <img src={item.cover} />
@@ -237,23 +242,43 @@ class Detail extends Component {
         </div>
         <div className="fixed">
           <div className="left">
-              <ul>
-                <li>
-                  <img src="../../assets/images/n1.png" alt=""/>
-                  <p onClick={()=>{
-                    console.log(window.localStorage.getItem("phone"));
-                    
-                  }}>收藏</p>
-                </li>
-                <li>
-                  <img src="../../assets/images/n2.png" alt=""/>
-                  <p>月票</p>
-                </li>
-                <li>
-                  <img src="../../assets/images/n3.png" alt=""/>
-                  <p>打赏</p>
-                </li>
-              </ul>
+            <ul>
+              <li>
+                <img src="../../assets/images/n1.png" alt="" />
+                <p
+                  onClick={() => {
+                    let phone = window.localStorage.getItem("phone");
+                    if (phone === null) {
+                      Toast.fail("操作失败，请先登入！", 1);
+                    } else {
+                      axios
+                        .post("http://localhost:9876/bookshelf", {
+                          phone: phone,
+                          comic_id: this.state.iList[0].comic_id,
+                          title: this.state.iList[0].title,
+                          cover: this.state.iList[0].cover,
+                          chapter_num: this.state.iList[0].chapter_num,
+                          cheme_id: this.state.iList[0].cheme_id,
+                          ischeck: "false"
+                        })
+                        .then(res => {
+                          Toast.success("收藏成功！", 1);
+                        });
+                    }
+                  }}
+                >
+                  收藏
+                </p>
+              </li>
+              <li>
+                <img src="../../assets/images/n2.png" alt="" />
+                <p>月票</p>
+              </li>
+              <li>
+                <img src="../../assets/images/n3.png" alt="" />
+                <p>打赏</p>
+              </li>
+            </ul>
           </div>
           <div className="right">
             <p>开始阅读</p>
