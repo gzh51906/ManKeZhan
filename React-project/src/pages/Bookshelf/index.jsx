@@ -56,7 +56,13 @@ class Bookshelf extends Component {
             return item.ischeck == false
         })
         this.setState({
-            bookshelflist:delarrt
+            bookshelflist: delarrt
+        })
+    }
+    gotodetails = (id) => {
+        this.props.history.push({
+            pathname: `/detail/${id}`,
+            // author: localStorage.getItem("phone")
         })
     }
     componentDidMount() {
@@ -125,9 +131,9 @@ class Bookshelf extends Component {
                                 {
                                     this.state.bookshelflist.map(item => {
                                         return <li key={item.comic_id}>
-                                            <a href="">
+                                            <div className="divforimg" onClick={this.gotodetails.bind(this, item.comic_id)}>
                                                 <img src={item.cover} alt="" />
-                                            </a>
+                                            </div>
                                             <div><p className="liname">{item.title}</p>
                                                 <p className="litext">1/{item.chapter_num}</p></div>
                                             {

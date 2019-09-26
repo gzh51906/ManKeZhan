@@ -12,6 +12,11 @@ class Mine extends Component {
             pathname: "/login"
         })
     }
+    upload = () => {
+        axios.post("http://localhost:9876/userhead", {
+
+        })
+    }
     componentDidMount() {
         let authorization = localStorage.getItem("authorization");
         if (authorization) {

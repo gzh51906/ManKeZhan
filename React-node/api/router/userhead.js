@@ -3,10 +3,10 @@ const multer = require('multer');
 const Router = express.Router();
 const mysql = require('../db/mysql');
 const { formatData } = require('../utils/index');
-var upload = multer({ dest: '' })//上传目录
+var upload = multer({ dest: 'uploads/' })//上传目录
 //增
-Router.post("/userhead", upload.single(""), (req, res) => {
-
+Router.post("/", upload.single("avatar"), (req, res) => {
+    res.send("success")
 });
 
 module.exports = Router;
