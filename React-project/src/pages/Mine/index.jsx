@@ -12,6 +12,11 @@ class Mine extends Component {
             pathname: "/login"
         })
     }
+    upload = () => {
+        axios.post("http://localhost:9876/userhead", {
+
+        })
+    }
     componentDidMount() {
         let authorization = localStorage.getItem("authorization");
         if (authorization) {
@@ -31,6 +36,7 @@ class Mine extends Component {
     }
     loginout = () => {
         localStorage.removeItem("authorization");
+        // localStorage.removeItem("phone")
         this.setState({
             islogin: false
         })
