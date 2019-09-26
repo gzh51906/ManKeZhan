@@ -64,6 +64,41 @@
                 widows: .866667rem;
                 justify-content: space-between
             }
+            .comment{
+                margin-bottom: .366667rem;
+                .user{
+                    display: flex;
+                    justify-content: space-between;
+                    .img{
+                        img{
+                            width: .74rem;
+                            height: .74rem;
+                            border-radius: 50%;
+                        }
+                    }
+                    .username{
+                        width: 7.033333rem;
+                        font-size: 5px;
+                        color: #aaa;
+                        .user{
+                            color: #000;
+                            font-size: 13px;
+                        }
+                    }
+                    .yse{
+                        margin-top: .633333rem;
+                        img{
+                            width: .526667rem;
+                            height: .516667rem;
+                        }
+                    }
+                }
+                .title{
+                    margin-left: .966667rem;
+                    font-size: 15px;
+                    color: #000;
+                }
+            }
         }
     }
 

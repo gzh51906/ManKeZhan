@@ -14,7 +14,8 @@ class Detail extends Component {
     boxs: [],
     three: [],
     sss: "5",
-    iList: []
+    iList: [],
+    comment: []
   };
   async componentDidMount() {
     let id = this.props.match.params.id;
@@ -42,6 +43,16 @@ class Detail extends Component {
         three: three
       });
     });
+    await axios
+      .get(
+        `https://comment.mkzcdn.com/comic/comment/lists/?comic_id=${id}&page_num=1&page_size=100`
+      )
+      .then(res => {
+        let comment = res.data.data.list;
+        this.setState({
+          comment: comment
+        });
+      });
     let boxs = [];
     for (let i = 0; i <= this.state.page; i++) {
       boxs.push(
@@ -67,9 +78,6 @@ class Detail extends Component {
     });
   }
   render() {
-    // console.log('====================================');
-    // console.log(this.state.iList[0].title);
-    // console.log('====================================');
     let { data } = this.state;
     let img = data.cover_lateral + "!banner-600";
     const tabs = [
@@ -203,11 +211,37 @@ class Detail extends Component {
               </div>
               <div
                 style={{
-                  height: "150px",
-                  backgroundColor: "#fff"
+                  height: "250px",
+                  backgroundColor: "#fff",
+                  overflow: "auto",
+                  padding: ".35rem"
                 }}
               >
-                Content of third tab
+                {this.state.comment.map(item => {
+                  return (
+                    <div className="comment">
+                      <div className="user">
+                        <span className="img">
+                          <img
+                            src={item.avatar+'!width-100'}
+                          />
+                        </span>
+                        <span className="username">
+                          <p className="user">{item.username}</p>
+                          <p>{item.create_time}</p>
+                        </span>
+                        <span className="yse">
+                          <img src="../../assets/images/yes.png" alt="" />
+                          &nbsp;
+                          <span>{item.is_stick}</span>
+                        </span>
+                      </div>
+                      <div className="title">
+                        <p>{item.content}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </Tabs>
             <WhiteSpace />
