@@ -240,7 +240,10 @@ class Detail extends Component {
               <ul>
                 <li>
                   <img src="../../assets/images/n1.png" alt=""/>
-                  <p>收藏</p>
+                  <p onClick={()=>{
+                    console.log(window.localStorage.getItem("phone"));
+                    
+                  }}>收藏</p>
                 </li>
                 <li>
                   <img src="../../assets/images/n2.png" alt=""/>

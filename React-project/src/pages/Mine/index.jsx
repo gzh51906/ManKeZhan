@@ -31,6 +31,7 @@ class Mine extends Component {
     }
     loginout = () => {
         localStorage.removeItem("authorization");
+        localStorage.removeItem("phone");
         this.setState({
             islogin: false
         })
