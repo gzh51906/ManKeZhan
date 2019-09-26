@@ -1,7 +1,9 @@
+
 #home{
+    
     .jp-header{
         line-height: 1rem;
-        
+        width: 100%;
         .more{
             color: #b4b4b4;
             float: right;
@@ -19,7 +21,7 @@
         justify-content: space-between;
         align-items: center;
         // position: fixed;
-        width: 100%;
+        // width: 100%;
         
         .left {
             height: 100%;
@@ -54,11 +56,11 @@
         display: flex;
         justify-content: space-between;
         .gx{
-            // float: left;
+            
             margin-left: 0.35rem;
         }
         .ph{
-            // float: left;
+           
             margin-right: 0.35rem;
         }
     }
@@ -138,8 +140,10 @@
             white-space: nowrap;
         }
         .jp-ul{
-            // display: flex;
-            // justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
             .jp-li{
                 float: left;
                 margin-right: .220755rem;

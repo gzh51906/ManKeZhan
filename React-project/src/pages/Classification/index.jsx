@@ -35,10 +35,10 @@ class Classification extends Component {
             <p>题材</p>
             <span></span>
           </div>
-          <div className="right">
-            <img onClick={() => {
+          <div className="right" onClick={() => {
               this.props.history.push("/search")
-            }} src="../../assets/images/search.png" alt="" />
+            }} >
+            <img  src="../../assets/images/search.png" alt="" />
           </div>
         </div>
         <div className="main" style={{ background: "#fff" }}>
