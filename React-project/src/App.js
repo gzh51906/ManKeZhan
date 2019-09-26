@@ -46,7 +46,7 @@ class App extends Component {
 
   componentDidMount() {
     let select = this.props.location.pathname.slice(1)
-    if (select == "classify") {
+    if (select == "classify" || select == "detail") {
       select = "classification";
     }
     this.setState({
