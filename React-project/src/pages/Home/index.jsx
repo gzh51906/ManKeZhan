@@ -83,12 +83,11 @@ class Home extends Component {
                     </WingBlank>
                 </div>
                 <div className="no">
-                    {/* <div className="gx">
-                        <img src="../../assets/images/ph.png" alt="" />
-                    </div>
-                    <div className="ph">
-                        <img src="../../assets/images/gx.png" alt="" />
-                    </div> */}
+                    <ul>
+                        <li><img src="../../assets/images/ph.png" alt="" /></li>
+                        <li><img src="../../assets/images/gx.png" alt="" /></li>
+                    </ul>
+                    
                 </div>
                 <div className="jp">
                     <h2 className="jp-header">

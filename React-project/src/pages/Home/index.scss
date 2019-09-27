@@ -67,13 +67,17 @@
         display: flex;
         // justify-content: space-between;
         width: 100%;
-        .gx{
+        ul{
             
-            // margin-left: 0.35rem;
-        }
-        .ph{
-           
-            // margin-right: 0.35rem;
+            li{
+                float: left;
+                // width: 100%;
+                img{
+                    width: 5rem;
+                    height: 1.5rem;
+                }
+                // width: 50%;
+            }
         }
     }
     .jp{
