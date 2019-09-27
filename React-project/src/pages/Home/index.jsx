@@ -3,10 +3,17 @@ import { Carousel, WingBlank } from 'antd-mobile';
 import "./index.scss";
 class Home extends Component {
     state = {
-        data: [],
+        data: [1,2,3,4,5],
         imgHeight: 176,
+    
     }
+    // constructor(props){
+    //     super(props);
+    //     this.state = {show:false};
+    //     this.handleScroll = this.handleScroll.bind(this)
+    // }
     componentDidMount() {
+        // window.addEventListener('scroll',this.handleScroll,true);
         // simulate img loading
         setTimeout(() => {
             this.setState({
@@ -18,10 +25,26 @@ class Home extends Component {
             });
         }, 100);
     }
+    // handleScroll(){
+    //     let scrollTop = document.documentElement.scrollTop || document.body/scrollTop;
+    //     if(scrollTop > 100){
+    //         this.setState({
+    //             show : true
+    //         })
+    //     }else{
+    //         this.setState({
+    //             show : false
+    //         })
+    //     }
+    // }
+    // backTop(){
+    //     document.documentElement.scrollTop = 0;
+    // }
     
     render() {
         return (
             <div id="home">
+                {/* <div className="gotop" onClick = {this.backTop}></div> */}
                 <div className="header">
                     <div className="left">
                         <img src="../../assets/images/logo.png" alt="" />
@@ -60,12 +83,12 @@ class Home extends Component {
                     </WingBlank>
                 </div>
                 <div className="no">
-                    <div className="gx">
+                    {/* <div className="gx">
                         <img src="../../assets/images/ph.png" alt="" />
                     </div>
                     <div className="ph">
                         <img src="../../assets/images/gx.png" alt="" />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="jp">
                     <h2 className="jp-header">
@@ -302,7 +325,7 @@ class Home extends Component {
                     <h2 className="jp-header">
                         <a href="">
                             <i><img src="../../assets/images/jp.png" alt="" /></i>
-                            <span>独家作品</span><span className="more">更多></span>
+                            <span>合作作品</span><span className="more">更多></span>
                         </a>
                     </h2>
                     <div className="jp-body">

@@ -1,6 +1,17 @@
 
 #home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     
+    .gotop{
+        width: 1rem;
+        height: 1rem;
+        background: #000;
+        position: fixed;
+        right: 0;
+        bottom: 2rem;
+    }
     .jp-header{
         line-height: 1rem;
         width: 100%;
@@ -21,7 +32,7 @@
         justify-content: space-between;
         align-items: center;
         // position: fixed;
-        // width: 100%;
+        width: 100%;
         
         .left {
             height: 100%;
@@ -54,14 +65,15 @@
     .no{
         margin: 0.5rem 0 0.5rem 0;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        width: 100%;
         .gx{
             
-            margin-left: 0.35rem;
+            // margin-left: 0.35rem;
         }
         .ph{
            
-            margin-right: 0.35rem;
+            // margin-right: 0.35rem;
         }
     }
     .jp{
@@ -103,20 +115,10 @@
         }
     }
     .dj{
-        height: 24rem;
+        // height: 24rem;
         padding: 0.2rem;
-        .jp-header{
-            line-height: 1rem;
-            
-            .more{
-                color: #b4b4b4;
-                float: right;
-            }
-            span{
-                color: #000;
-                font-size: 0.4rem;
-           }
-        }
+        width: 100%;
+
         .hot{
             margin-bottom: 0.3rem;
             img{
@@ -145,8 +147,9 @@
             flex-wrap: wrap;
             width: 100%;
             .jp-li{
+                width: 33%;
                 float: left;
-                margin-right: .220755rem;
+                // margin-right: .220755rem;
                 margin-bottom: 0.3rem;
                 img{
                     width: 2.98rem;
@@ -162,7 +165,7 @@
         }
     }
     .ss{
-        height: 13rem;
+        // height: 13rem;
         padding: 0.2rem;
         
         .jp-header{
@@ -203,7 +206,8 @@
         .ss-b{
             .jp-li{
                 float: left;
-                margin-right: .220755rem;
+                width: 33%;
+                // margin-right: .220755rem;
                 margin-bottom: 0.3rem;
                 img{
                     width: 2.98rem;
@@ -228,7 +232,7 @@
         }
     }
     .xz{
-        height: 20rem;
+        // height: 20rem;
         padding: 0.2rem;
         .jp-header{
             line-height: 1rem;
@@ -259,7 +263,8 @@
         .ss-b{
             .jp-li{
                 float: left;
-                margin-right: .220755rem;
+                width: 33%;
+                // margin-right: .220755rem;
                 margin-bottom: 0.3rem;
                 img{
                     width: 2.98rem;
@@ -282,7 +287,7 @@
         }
     }
     .zt{
-        height: 8rem;
+        // height: 8rem;
         padding: 0.2rem;
         .jp-ul{
             // padding: 0.3rem;
