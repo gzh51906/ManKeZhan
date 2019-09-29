@@ -1,0 +1,41 @@
+#List{
+    margin-left:256px; 
+    
+    .list{
+        .foot{
+            width: 500px;
+            margin: 50px auto;
+        }
+        .body{
+            .good{
+                background: #faf9f9;
+                tr{
+                 // height: 100px;
+                    td{
+                        font-size: 18px;
+                        width: 223px;
+                        text-align: center;
+                        padding-bottom: 20px;
+                        height: 100px;
+                    }
+                    .tit{
+                        width: 300px;
+                    }
+                    .img{
+                        width: 300px;
+                        img{
+                            width: 80px;
+                            height:100px;
+                        }
+                    }
+                    .au{
+                        width: 300px;
+                    }
+                    .op{
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "PORT": 9876,
+    "DBurl": "mongodb://localhost:27017",
+    "DBname": "reactproject"
+}
