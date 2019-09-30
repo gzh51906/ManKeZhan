@@ -16,7 +16,7 @@ class List extends Component {
     }
     componentDidMount() {
         //获取全部
-        axios.get("http://localhost:9876/list").then(res => {
+        axios.get("http://localhost:1908/list").then(res => {
 
 
             this.setState({
@@ -24,7 +24,7 @@ class List extends Component {
             })
         });
         //每页
-        axios.get("http://localhost:9876/list/page", {
+        axios.get("http://localhost:1908/list/page", {
             params: {
                 page: this.state.page
             }
