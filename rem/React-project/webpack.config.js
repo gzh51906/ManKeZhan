@@ -4,6 +4,10 @@ module.exports = {
     entry: {
         main: './src/main.js',
     },
+    output: {
+        path: __dirname + "/dist",
+        filename: 'bundle-[name]-[hash:5].js',//bundle-main-xsdkfj.js
+        },
     devServer: {
         contentBase: './src',
         open: true

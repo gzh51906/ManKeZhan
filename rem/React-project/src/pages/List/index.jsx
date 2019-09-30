@@ -83,7 +83,7 @@ class List extends Component {
                                 console.log(page);
                                 this.state.page = page * 5 - 5;
                                 console.log(this.state.page);
-                                axios.get("http://localhost:9876/list/page", {
+                                axios.get("http://localhost:1908/list/page", {
                                     params: {
                                         page: this.state.page
                                     }
