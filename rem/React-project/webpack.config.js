@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: __dirname + "/dist",
         filename: 'bundle-[name]-[hash:5].js',//bundle-main-xsdkfj.js
-        },
+    },
     devServer: {
         contentBase: './src',
         open: true
@@ -48,8 +48,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/template.html',
-            favicon: "./src/assets/favicon.x_icon"
+            template: './src/template.html'
         })
     ]
 }
